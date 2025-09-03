@@ -1,25 +1,24 @@
-"use client"
+"use client";
 
-import { Button } from "@/components/ui/button"
-import GetNotifiedButton from "../ui/GetNotifiedButton"
-import { Menu, X } from "lucide-react"
-import { useState } from "react"
-import Image from "next/image"
-import { useCountdown } from "@/hooks/useCountdown"
-import { targetDate } from "@/data/constants"
-import ApplyNowButton from "../ui/ApplyNowButton"
+import { Button } from "@/components/ui/button";
+import GetNotifiedButton from "../ui/GetNotifiedButton";
+import { Menu, X } from "lucide-react";
+import { useState } from "react";
+import Image from "next/image";
+import { useCountdown } from "@/hooks/useCountdown";
+import { targetDate } from "@/data/constants";
+import ApplyNowButton from "../ui/ApplyNowButton";
 
 export default function Navigation() {
-  const [isMenuOpen, setIsMenuOpen] = useState(false)
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
 
-  const { isEnded } = useCountdown(targetDate)
+  const { isEnded } = useCountdown(targetDate);
   const navItems = [
     { name: "Home", href: "#home" },
     { name: "Activities", href: "#activities" },
     { name: "About", href: "#about" },
     { name: "FAQs", href: "#faqs" },
-  ]
-
+  ];
 
   return (
     <nav className="fixed top-0 left-0 right-0 z-50 bg-transparent">
@@ -54,12 +53,12 @@ export default function Navigation() {
           </div>
 
           {/* Get Notified Button */}
-          
-          { isEnded ? (
-                 <ApplyNowButton className="md:flex hidden"></ApplyNowButton>
-              ) : (
-                <GetNotifiedButton className="md:flex hidden"></GetNotifiedButton>
-              )}
+
+          {isEnded ? (
+            <ApplyNowButton className="md:flex hidden"></ApplyNowButton>
+          ) : (
+            <GetNotifiedButton className="md:flex hidden"></GetNotifiedButton>
+          )}
 
           {/* Mobile menu button */}
           <div className="md:hidden">
@@ -69,7 +68,11 @@ export default function Navigation() {
               onClick={() => setIsMenuOpen(!isMenuOpen)}
               className="text-gray-300 hover:text-white hover:bg-white/10"
             >
-              {isMenuOpen ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
+              {isMenuOpen ? (
+                <X className="h-5 w-5" />
+              ) : (
+                <Menu className="h-5 w-5" />
+              )}
             </Button>
           </div>
         </div>
@@ -88,16 +91,15 @@ export default function Navigation() {
                   {item.name}
                 </a>
               ))}
-              { isEnded ? (
-                 <ApplyNowButton className="w-full"></ApplyNowButton>
+              {isEnded ? (
+                <ApplyNowButton className="w-full"></ApplyNowButton>
               ) : (
                 <GetNotifiedButton className="w-full"></GetNotifiedButton>
               )}
-             
             </div>
           </div>
         )}
       </div>
     </nav>
-  )
+  );
 }

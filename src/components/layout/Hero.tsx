@@ -5,15 +5,15 @@ import { Bot } from "lucide-react";
 import { AnimatedGridPattern } from "@/components/ui/animated-grid-pattern";
 import { cn } from "@/lib/utils";
 import { Button } from "../ui/button";
-import Link from "next/link"
+import Link from "next/link";
 import CountdownTimer from "../ui/CountdownTimer";
 import { useCountdown } from "@/hooks/useCountdown";
 import { targetDate } from "@/data/constants";
 import { useIsMobile } from "@/hooks/useIsMobile";
 
 export default function Hero() {
-  const { isEnded } = useCountdown(targetDate)
-  const isMobile = useIsMobile()
+  const { isEnded } = useCountdown(targetDate);
+  const isMobile = useIsMobile();
   return (
     <div
       className="relative min-h-screen bg-black text-white overflow-hidden border-gray-600/20 border-b"
@@ -27,7 +27,7 @@ export default function Hero() {
         className={cn(
           "[mask-image:radial-gradient(1200px_circle_at_center,white,transparent)]",
           "inset-x-0 inset-y-[-20%] h-[140%] skew-y-6",
-          "stroke-gray-600/40 fill-gray-600/20",
+          "stroke-gray-600/40 fill-gray-600/20"
         )}
       />
       <AnimatedGridPattern
@@ -39,7 +39,7 @@ export default function Hero() {
         className={cn(
           "[mask-image:radial-gradient(800px_circle_at_center,white,transparent)]",
           "inset-x-0 inset-y-[-30%] h-[160%] -skew-y-3",
-          "stroke-gray-500/30 fill-gray-500/10",
+          "stroke-gray-500/30 fill-gray-500/10"
         )}
       />
       <div className="absolute inset-0 bg-gradient-to-br from-gray-800/10 via-transparent to-gray-700/10" />
@@ -54,7 +54,7 @@ export default function Hero() {
             className="border-blue-800/30 bg-blue-900/20 text-blue-200 hover:bg-blue-800/30 transition-all duration-300 backdrop-blur-sm"
           >
             <Bot className="w-3 h-3 mr-2" />
-            SIOTICS Club
+            ENGLISH Club
           </Badge>
 
           {/* Main Headline */}
@@ -66,31 +66,38 @@ export default function Hero() {
               </span>
             </h1>
             <h3 className="text-xl sm:text-2xl text-white/75 max-w-4xl mx-auto">
-              Be part of State Vocational High School 1 Jakarta{"'"}s coolest tech club ⚙️🤖
+              Be part of State Vocational High School 1 Jakarta{"'"}s coolest
+              Literature club 📖💡
             </h3>
           </div>
 
           {/* Countdown Timer */}
-          {!isEnded && (  
-          <div className="space-y-6">
-            <p className="text-gray-400">{"Registration opens in"}</p>
-            <CountdownTimer />
-          </div>
-         )}
+          {!isEnded && (
+            <div className="space-y-6">
+              <p className="text-gray-400">{"Registration opens in"}</p>
+              <CountdownTimer />
+            </div>
+          )}
 
-         {isEnded && (
-          <div className={(!isMobile) ? "hidden" : "space-y-6"}>
-          <p className="text-gray-400">{"Open Registration!"}</p>
-          <div className="flex max-w-full w-max justify-center items-center gap-3 mx-auto">
-            <Button asChild size={"lg"} className=" bg-blue-600 hover:bg-blue-700 text-white group shadow-lg shadow-blue-600/25 ">
-              <Link href="https://portal.siotics.org">Click to Apply!</Link>
-            </Button>
-            <Button asChild size={"lg"} className="" variant={"default"}><Link href={"/#activities"}>Learn More</Link></Button>
-          </div>
-          
-          {/* <CountdownTimer /> */}
-        </div>
-         )}
+          {isEnded && (
+            <div className={!isMobile ? "hidden" : "space-y-6"}>
+              <p className="text-gray-400">{"Open Registration!"}</p>
+              <div className="flex max-w-full w-max justify-center items-center gap-3 mx-auto">
+                {/* <Button
+                  asChild
+                  size={"lg"}
+                  className=" bg-blue-600 hover:bg-blue-700 text-white group shadow-lg shadow-blue-600/25 "
+                >
+                  <Link href="https://portal.siotics.org">Click to Apply!</Link>
+                </Button> */}
+                <Button asChild size={"lg"} className="" variant={"default"}>
+                  <Link href={"/#activities"}>Explore More</Link>
+                </Button>
+              </div>
+
+              {/* <CountdownTimer /> */}
+            </div>
+          )}
         </div>
       </div>
     </div>

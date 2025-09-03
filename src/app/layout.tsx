@@ -15,8 +15,8 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Siotics",
-  description: "The State Vocational Highschool 1 Jakarta's Coolest Tech Club",
+  title: "English Club",
+  description: "The State Vocational Highschool 1 Jakarta's Coolest Literature Club",
 };
 
 export default function RootLayout({
