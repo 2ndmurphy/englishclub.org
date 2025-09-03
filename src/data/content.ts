@@ -37,4 +37,3 @@ export const teamData = Array(3).fill([
     { name: "Rakha", profilePicturePath: "raka.png" },
     { name: "Arkha", profilePicturePath: "arkha.png"}
 ]).flat();
-  
