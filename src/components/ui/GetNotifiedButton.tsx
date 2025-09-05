@@ -20,7 +20,7 @@ export default function GetNotifiedButton({
       <Link
         target="_blank"
         href={
-          "https://calendar.google.com/calendar/render?action=TEMPLATE&dates=20250718%2F20250719&details=Siotics%20Registration%20is%20open%21%20Checkout%20https%3A%2F%2Fsiotics.org&location=&text=Siotics%20Registration"
+          "https://calendar.google.com/calendar/render?action=TEMPLATE&dates=20260718%2F20260719&details=English%20Club%20Registration%20is%20open%21%20Checkout%20https%3A%2F%2Fenglishclub.org&location=&text=English%20Club%20Registration"
         }
       >
         <Calendar className="mr-2 h-4 w-4" />
