@@ -62,11 +62,7 @@ export function AnimatedGridPattern({
 
   const updateSquarePosition = (id: number) => {
     setSquares((currentSquares) =>
-      currentSquares.map((sq) =>
-        sq.id === id
-          ? { ...sq, pos: getPos() }
-          : sq,
-      ),
+      currentSquares.map((sq) => (sq.id === id ? { ...sq, pos: getPos() } : sq))
     );
   };
 
@@ -115,7 +111,7 @@ export function AnimatedGridPattern({
       aria-hidden="true"
       className={cn(
         "pointer-events-none absolute inset-0 h-full w-full fill-gray-400/30 stroke-gray-400/30",
-        className,
+        className
       )}
       {...props}
     >

@@ -1,11 +1,10 @@
 "use client";
 import { Card } from "@/components/ui/card";
 import { cn } from "@/lib/utils";
-import { useCountdown } from "@/hooks/useCountdown"; 
+import { useCountdown } from "@/hooks/useCountdown";
 import { targetDate } from "@/data/constants";
 
 export default function CountdownTimer() {
-  
   const { timeLeft } = useCountdown(targetDate);
 
   return (
@@ -16,7 +15,7 @@ export default function CountdownTimer() {
         // switch to grid for <370px
         "max-[370px]:grid max-[370px]:grid-cols-2 max-[370px]:gap-4",
         // center grid itself
-        "max-[370px]:w-max max-[370px]:mx-auto",
+        "max-[370px]:w-max max-[370px]:mx-auto"
       )}
     >
       {[
